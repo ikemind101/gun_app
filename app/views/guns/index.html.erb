@@ -30,7 +30,7 @@
     <tbody>
       <% @guns.each do |gun| %>
         <tr>
-          <td><%= gun.photo %></td>
+          <td><%= image_tag gun.avatar.url %></td>
           <td><%= gun.make %></td>
           <td><%= gun.caliber %></td>
           <td><%= gun.ammo %></td>

@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @gun.name %></h1>
+<%= image_tag @gun.avatar.url %>
+<p><%= @gun.caliber %></p>
+
 <%= link_to 'Edit', edit_gun_path(@gun) %> |
 <%= link_to 'Back', guns_path %>
