@@ -1,0 +1,17 @@
+<%= form_with(model: gun) do |form| %>
+  <% if gun.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gun.errors.count, "error") %> prohibited this gun from being saved:</h2>
+
+      <ul>
+        <% gun.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
