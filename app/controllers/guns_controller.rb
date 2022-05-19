@@ -25,7 +25,7 @@ class GunsController < ApplicationController
 
     respond_to do |format|
       if @gun.save
-        format.html { redirect_to gun_url(@gun), notice: "Gun was successfully created." }
+        format.html { redirect_to root_path, notice: "Gun was successfully created." }
         format.json { render :show, status: :created, location: @gun }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -63,8 +63,9 @@ class GunsController < ApplicationController
       @gun = Gun.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def gun_params
-      params.fetch(:gun, {})
+      params.require(:gun).permit(:name, :model, :needs, :serial, :caliber, :make, :ids => [])
     end
+
+   
 end

@@ -1,4 +1,44 @@
 <%= form_with(model: gun) do |form| %>
+
+<form>
+  <div class="form-group">
+    <%= form.label :name%>
+    <%= form.text_field :name%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :make%>
+    <%= form.text_field :make%>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :caliber%>
+    <%= form.text_field :caliber%>
+  </div>  
+
+  <div class="form-group">
+    <%= form.label :needs%>
+    <%= form.text_field :needs%>
+  </div> 
+
+   <div class="form-group">
+    <%= form.label :serial%>
+    <%= form.text_field :serial%>
+  </div> 
+
+
+  <div class="form-group">
+    <%= form.label :ammo%>
+    <%= form.check_box :ammo%>
+  </div> 
+
+
+  <div class="form-check actions">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
   <% if gun.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(gun.errors.count, "error") %> prohibited this gun from being saved:</h2>
@@ -10,8 +50,4 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
