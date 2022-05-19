@@ -1,4 +1,4 @@
-<%= form_with(model: gun) do |form| %>
+<%= form_for @gun, html: {multipart: true} do |form| %>
 
 <form>
   <div class="form-group">
@@ -33,10 +33,15 @@
     <%= form.check_box :ammo%>
   </div> 
 
+  <div class="form-group">
+    <%= form.label :avatar%>
+     <%= form.file_field :avatar %>
+  </div>
+
 
   <div class="form-check actions">
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
 
   <% if gun.errors.any? %>
