@@ -1,8 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @gun.name %></h1>
-<%= image_tag @gun.avatar.url %>
-<p><%= @gun.caliber %></p>
+<div class="row m-3">
+  <div class="col-md-6 offset-md-2">
+    <div class="card box-shadow">
+      <div class="card-header bg-transparent">
+      <span class="text-left float-left h4"><%= @gun.name %></span>
+      </div>
+      <div class="card-body">
+        <h6>Caliber</h6>
+        <h2 class="pb-3"><b><%= @gun.caliber %></b></h2>
+        <table class="table table-row-bordered table-striped">
+          <tr>
+            <th>Ammo Qty.</th>
+            <td><%= @gun.ammo %></td>
+          </tr>
+          <tr>
+            <th>Serial#</th>
+            <td><%= @gun.serial %></td>
+          </tr>
+          <tr>
+            <th>Needs:</th>
+            <td><%= @gun.needs %></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td><%= image_tag @gun.avatar.url, class:"img-card"%></td>
+          </tr>
+        </table>
+      </div>
+      
+        <div class="py-4 px-2 bg-light align-center text-center">
+          <%= link_to edit_gun_path(@gun), class: 'btn button btn-block-xs-only' do %>
+            Edit Gun
+          <% end %>
+        </div>
 
-<%= link_to 'Edit', edit_gun_path(@gun) %> |
-<%= link_to 'Back', guns_path %>
+        <span class="text-right bg-light pr-3 pb-1">
+          <%= link_to edit_gun_path(@gun), class: 'small text-secondary',
+            :method => :delete, data: {confirm: 'Are you sure you want to disable this recurring payment?'} do %>
+            Delete Gun
+          <% end %>
+        </span>
+    </div>
+  </div>
+</div>
+<%= link_to 'Back', guns_path, class:"btn btn-primary m-3" %>

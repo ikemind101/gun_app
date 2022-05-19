@@ -11,7 +11,7 @@
         <th></th>
         <th>Name</th>
         <th>Caliber</th>
-        <th>Ammo?</th>
+        <th>Ammo Qty.</th>
         <th>Needs</th>
         <th></th>
       </tr>
@@ -25,11 +25,7 @@
           <td><%= gun.caliber %></td>
            <td><%= gun.ammo %></td>
           <td><%= gun.needs %></td>
-          <td>
-            <%= link_to 'Show', gun, class:"btn btn-sm btn-outline-primary" %> 
-            <%= link_to 'Edit', edit_gun_path(gun), class:"btn btn-sm btn-outline-primary" %>
-            <%= link_to 'Delete', gun, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-outline-danger" %>
-          </td>
+          <td><%= link_to 'Show', gun, class:"btn btn-sm btn-outline-primary" %></td>
         </tr>
       <% end %>
     </tbody>

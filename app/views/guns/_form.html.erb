@@ -1,51 +1,55 @@
-<div class="box-shadow p-3">
+<% if gun.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(gun.errors.count, "error") %> prohibited this gun from being saved:</h2>
 
-  <%= form_for @gun, html: {multipart: true} do |form| %>
-
-    <form>
-      <div class="form-group">
-        <%= form.label :name%>
-        <%= form.text_field :name%>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :caliber%>
-        <%= form.text_field :caliber%>
-      </div>  
-
-      <div class="form-group">
-        <%= form.label :needs%>
-        <%= form.text_field :needs%>
-      </div> 
-
-      <div class="form-group">
-        <%= form.label :Photo%>
-        <%= form.file_field :avatar %>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :ammo%>
-        <%= form.text_field :ammo %>
-      </div>
+    <ul>
+      <% gun.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
-      <div class="form-check actions">
-        <button type="submit" class="btn btn-primary">Add</button>
-      </div>  
-    </form>
+<div class="row m-3">
+  <div class="col-md-8 offset-md-2">
+    <div class="card box-shadow">
+      <div class="card-header bg-transparent">
+        <%= form_for @gun, html: {multipart: true} do |form| %>
 
-
-    <% if gun.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(gun.errors.count, "error") %> prohibited this gun from being saved:</h2>
-
-        <ul>
-          <% gun.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-  <% end %>
+          <span class="text-left float-left h3">Add a new gun</span>
+          </div>
+          <div class="card-body">
+            <table class="table table-row-bordered table-striped">
+            <tr>
+                <th>Description</th>
+                <td><%= form.text_field :name, class:"form-control" %></td>
+              </tr>
+              <tr>
+              <tr>
+                <th>Caliber</th>
+                <td><%= form.text_field :caliber, class:"form-control" %></td>
+              </tr>
+              <tr>
+                <th>Ammo Qty</th>
+                <td><%= form.text_field :ammo, class:"form-control" %></td>
+              </tr>
+              <tr>
+                <th>Needs:</th>
+                <td><%= form.text_field :needs, class:"form-control" %></td>
+              </tr>
+              <tr>
+                <th>Serial #</th>
+                <td><%= form.text_field :serial, class:"form-control" %></td>
+              <tr>
+            </table>
+          </div>
+      
+          <div class="py-4 px-2 bg-light align-center text-center">
+             <%= form.submit %>
+          </div>
+        <% end %> 
+    
+    </div>
+  </div>
 </div>  
