@@ -12,6 +12,9 @@
   <tbody>
     <% @guns.each do |gun| %>
       <tr>
+        <td><%= gun.make %></td>
+        <td><%= gun.caliber %></td>
+        <td><%= gun.name %></td>
         <td><%= link_to 'Show', gun %></td>
         <td><%= link_to 'Edit', edit_gun_path(gun) %></td>
         <td><%= link_to 'Destroy', gun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
