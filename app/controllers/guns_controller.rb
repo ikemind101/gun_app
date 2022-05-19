@@ -64,7 +64,7 @@ class GunsController < ApplicationController
     end
 
     def gun_params
-      params.require(:gun).permit(:name, :model, :needs, :serial, :caliber, :make, :avatar, :ids => [])
+      params.require(:gun).permit(:name, :caliber, :ammo, :needs, :serial, :avatar, :ids => [])
     end
 
 end
