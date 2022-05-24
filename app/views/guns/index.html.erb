@@ -25,7 +25,10 @@
           <td><%= gun.caliber %></td>
            <td><%= gun.ammo %></td>
           <td><%= gun.needs %></td>
-          <td><%= link_to 'Show', gun, class:"btn btn-sm btn-outline-primary" %></td>
+          <td>
+            <%= link_to 'Show', gun, class:"btn btn-sm btn-outline-primary mr-1" %> 
+            <%= link_to 'X', gun, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-outline-danger" %>
+          </td>
         </tr>
       <% end %>
     </tbody>

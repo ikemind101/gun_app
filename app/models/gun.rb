@@ -4,8 +4,5 @@ class Gun < ActiveRecord::Base
 
   self.table_name = "guns" 
 
-  # :storage => :sql,
-  # :sql_options => { :table => Upload }
-
 end
 
