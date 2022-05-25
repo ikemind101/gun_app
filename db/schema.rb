@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_19_173343) do
+ActiveRecord::Schema.define(version: 2022_05_24_225307) do
 
   create_table "guns", id: { type: :integer, unsigned: true }, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "name"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2022_05_19_173343) do
     t.string "avatar_content_type"
     t.bigint "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer "disabled", limit: 1
+    t.integer "status"
   end
 
 end

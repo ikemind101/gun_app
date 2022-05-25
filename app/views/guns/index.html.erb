@@ -13,6 +13,7 @@
         <th>Caliber</th>
         <th>Ammo Qty.</th>
         <th>Needs</th>
+        <th>status</th>
         <th></th>
       </tr>
     </thead>
@@ -20,11 +21,12 @@
     <tbody>
       <% @guns.each do |gun| %>
         <tr>
-          <td><%= image_tag gun.avatar.url(:thumb) %></td>
+          <td><%= "image_tag gun.avatar.url(:thumb)" %></td>
           <td><%= gun.name %></td>
           <td><%= gun.caliber %></td>
            <td><%= gun.ammo %></td>
           <td><%= gun.needs %></td>
+          <td><%= gun.status %></td>
           <td>
             <%= link_to 'Show', gun, class:"btn btn-sm btn-outline-primary mr-1" %> 
             <%= link_to 'X', gun, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-outline-danger" %>
