@@ -39,11 +39,6 @@
             </tr>
 
             <tr>
-              <th>Needs:</th>
-              <td><%= form.text_field :needs, class:"form-control" %></td>
-            </tr>
-
-            <tr>
               <th>Serial #</th>
               <td><%= form.text_field :serial, class:"form-control" %></td>
             </tr>
@@ -51,6 +46,16 @@
             <tr>
               <th>Photo</th>
               <td><%= form.file_field :avatar %></td>
+            </tr>
+
+            <tr>
+              <th>Status</th>
+              <td><%= form.select :status, options_for_select([["Ready","ready"],["Needs repair","needsrepair"],["Needs evaluation","needsevaluation"]]), class:"form-control"%></td>
+            </tr>
+
+            <tr>
+              <th>**render me if the above is Needs Repair - Needs:</th>
+              <td><%= form.text_field :needs, class:"form-control" %></td>
             </tr>
           </table>
         </div>
@@ -62,4 +67,4 @@
       </div>
     </div>
   </div>  
- <% end %>  
+ <% end %>
