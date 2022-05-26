@@ -23,14 +23,14 @@
             <td><%= @gun.needs %></td>
           </tr>
           <tr>
-            <th></th>
-            <td><%= %></td>
+            <th>Status:</th>
+            <td><%= @gun.status %></td>
           </tr>
         </table>
       </div>
       
         <div class="py-4 px-2 bg-light align-center text-center">
-          <%= link_to edit_gun_path(@gun), class: 'btn button btn-block-xs-only' do %>
+          <%= link_to edit_gun_path(@gun), class: 'btn btn-block-xs-only' do %>
             Edit Gun
           <% end %>
         </div>
