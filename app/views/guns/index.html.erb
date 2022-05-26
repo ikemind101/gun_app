@@ -21,7 +21,7 @@
     <tbody>
       <% @guns.each do |gun| %>
         <tr>
-          <td><%= "image_tag gun.avatar.url(:thumb)" %></td>
+          <td><%= image_tag gun.avatar.url(:thumb) %></td>
           <td><%= gun.name %></td>
           <td><%= gun.caliber %></td>
            <td><%= gun.ammo %></td>
