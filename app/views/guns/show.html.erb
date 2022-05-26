@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row m-3">
-  <div class="col-md-6 offset-md-2">
+<div class="row m-4">
+  <div class="col-md-6 offset-md-3">
     <div class="card box-shadow">
       <div class="card-header bg-transparent">
       <span class="text-left float-left h4"><%= @gun.name %></span>
@@ -30,9 +30,6 @@
             <th></th>
             <td><%= image_tag @gun.avatar.url, class:"img-card"%></td>
           </tr>
-                      
-
-
         </table>
       </div>
       
@@ -51,4 +48,11 @@
     </div>
   </div>
 </div>
-<%= link_to 'Back', guns_path, class:"btn btn-primary m-3" %>
+
+<div class="button2 ml-4 mb-2">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <%= link_to 'Back', guns_path, class:"" %>
+</div>

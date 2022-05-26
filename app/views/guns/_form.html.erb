@@ -10,61 +10,45 @@
   </div>
 <% end %>
 
-
-<%= form_for @gun, html: {multipart: true} do |form| %>
-
-  <div class="row m-3">
-    <div class="col-md-8 offset-md-2">
+  <div class="row m-4">
+    <div class="col-md-6 offset-md-3">
       <div class="card box-shadow">
         <div class="card-header bg-transparent">
-          <span class="text-left float-left h3">Gun Form</span>
-        </div>
-
-        <div class="card-body">
-          <table class="table table-row-bordered table-striped">
-          
-            <tr>
-              <th>Description</th>
-              <td><%= form.text_field :name, class:"form-control" %></td>
-            </tr>
-          
-            <tr>
-              <th>Caliber</th>
-              <td><%= form.text_field :caliber, class:"form-control" %></td>
-            </tr>
-
-            <tr>
-              <th>Ammo Qty</th>
-              <td><%= form.text_field :ammo, class:"form-control" %></td>
-            </tr>
-
-            <tr>
-              <th>Serial #</th>
-              <td><%= form.text_field :serial, class:"form-control" %></td>
-            </tr>
-
-            <tr>
-              <th>Photo</th>
-              <td><%= form.file_field :avatar %></td>
-            </tr>
-
-            <tr>
-              <th>Status</th>
-              <td><%= form.select :status, options_for_select([["Ready","ready"],["Needs repair","needsrepair"],["Needs evaluation","needsevaluation"],["Get mag","getMag"]]), class:"form-control"%></td>
-            </tr>
-
-            <tr>
-              <th>**render me if the above is Needs Repair - Needs:</th>
-              <td><%= form.text_field :needs, class:"form-control" %></td>
-            </tr>
-          </table>
-        </div>
+          <%= form_for @gun, html: {multipart: true} do |form| %>
+            <span class="text-left float-left h4"><%= form.text_field :name, class:"form-control", Placeholder:"Gun Name" %></span>
+            </div>
+            <div class="card-body">
+              <h6>Caliber</h6>
+              <h2 class="pb-3"><b><%= form.text_field :caliber, class:"form-control", Placeholder:"Caliber" %></b></h2>
+              <table class="table table-row-bordered table-striped">
+                <tr>
+                  <th>Ammo Qty.</th>
+                  <td><%= form.text_field :ammo, class:"form-control", Placeholder:"Ammo Amount" %></td>
+                </tr>
+                <tr>
+                  <th>Serial#</th>
+                  <td><%= form.text_field :serial, class:"form-control", Placeholder:"Serial Number" %></td>
+                </tr>
+                <tr>
+                  <th>Status:</th>
+                  <td><%= form.select :status, options_for_select([["Ready","ready"],["Needs repair","needsrepair"],["Needs evaluation",  "needsevaluation"],["Get mag","getMag"]]), class:"form-control" %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>** render me if above is selected Needs:</th>
+                  <td><%= form.text_field :needs, class:"form-control" %></td>
+                </tr>
+                <tr>
+                  <th>Photo</th>
+                  <td><%= form.file_field :avatar %></td>
+                </tr>
+              </table>
+            </div>
         
-        <div class="py-4 px-2 bg-light align-center text-center">
-          <%= form.submit %>
-        </div> 
-      
-      </div>
+            <div class="py-4 px-2 bg-light align-center text-center">
+              <%= form.submit %>
+            </div>
+          <% end %>  
+        </div>
     </div>
-  </div>  
- <% end %>
+  </div>
