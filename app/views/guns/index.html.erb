@@ -23,20 +23,20 @@
     </thead>
 
     <tbody>
-      <% @guns.each do |gun| %>
+      <%# <% @guns.each do |gun| %> %>
         <tr>
-          <td><%= image_tag gun.avatar.url(:thumb) %></td>
-          <td><%= gun.name %></td>
-          <td><%= gun.caliber %></td>
-           <td><%= gun.ammo %></td>
-          <td><%= gun.needs %></td>
-          <td><%= gun.status %></td>
+          <%# <td><%= image_tag gun.avatar.url(:thumb) %></td> %>
+          <%# <td><%= gun.name %></td> %>
+          <%# <td><%= gun.caliber %></td> %>
+           <%# <td><%= gun.ammo %></td> %>
+          <%# <td><%= gun.needs %></td> %>
+          <%# <td><%= gun.status %></td> %>
           <td>
-            <%= link_to 'More', gun, class:"btn btn-sm btn-outline-primary mr-1" %> 
-            <%= link_to 'X', gun, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-outline-danger" %>
+            <%# <%= link_to 'More', gun, class:"btn btn-sm btn-outline-primary mr-1" %>  %>
+            <%# <%= link_to 'X', gun, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-outline-danger" %> %>
           </td>
         </tr>
-      <% end %>
+      <%# <% end %> %>
     </tbody>
   </table>
 </div>
