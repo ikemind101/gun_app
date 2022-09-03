@@ -7,8 +7,7 @@ class GunsController < ApplicationController
   end
 
   # GET /guns/1 or /guns/1.json
-  def show
-  end
+  def show;end
 
   # GET /guns/new
   def new
